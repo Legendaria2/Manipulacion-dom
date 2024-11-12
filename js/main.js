@@ -173,3 +173,31 @@ function diagonal() {
         letra.innerText = "Figura";
     }
 }
+
+
+function active (){
+    const active = document.getElementById("panel-lateral");
+    
+    if (!active.classList.contains("active")) {
+        active.classList = ("active");
+    } else {
+        active.classList.remove("active");
+    }
+}
+
+function desactive (){
+    const desactive = document.getElementById("panel-superior");  
+    
+    if (!desactive.classList.contains("desactive")) {
+        desactive.classList = ("desactive");
+    } else {
+        desactive.classList.remove("desactive");
+    }
+}
+function volver(){
+    const volver = document.getElementById("panel-superior");
+
+    if (volver.classList.contains("desactive")){
+        volver.classList.remove("desactive");
+    }
+}

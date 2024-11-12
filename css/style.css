@@ -5,12 +5,15 @@
 
 #cont-general {
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     text-align: center;
     background: #000000;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 h2 {
     color: aquamarine;
@@ -28,15 +31,15 @@ h2 {
     position: relative;
 }
 
-button {
+.button button {
     color: #000000;
     background-color: aquamarine;
-    font-size: 20px;
-    margin: 10px;
-    padding: 15px 40px;
+    font-size: 18px;
+    margin: 8px;
+    padding: 13px 35px;
     border-color: transparent;
 }
-button:hover {
+.button button:hover {
     color: aliceblue;
     background-color: blueviolet;
     border-color: rgb(255, 255, 255); 
@@ -94,15 +97,15 @@ button:hover {
 .derecha{
     position: absolute;
     right: 0;
-    left: 34.5rem;
-    margin: 150px 0 !important;
+    left: 30rem;
+    /* margin: 150px 0 !important; */
 }
 
 .izquierda {
     position: absolute;
-    right: 34.5rem;
+    right: 30rem;
     left: 0;
-    margin: 150px 0 !important;
+    /* margin: 150px 0 !important; */
 }
 .animation{
     animation: rotate 4s infinite ease-in-out;
@@ -152,3 +155,107 @@ button:hover {
 #figura .fondo {
     background: linear-gradient(aquamarine,purple,red,blue) !important;
 }
+
+#panel-lateral {
+    position: absolute;
+    left: -400px;
+    top: 0;
+    bottom: 0;
+    width: 400px;
+    height: auto;
+    background: aquamarine;
+    z-index: 10; 
+    transition: .4s;   
+}
+
+#panel-lateral.active {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 400px;
+    height: auto;
+    background: aquamarine;
+    border: 2px solid rgba(4, 136, 92, 0.795);
+    z-index: 100;    
+}
+
+#panel-superior{
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: -150vh;
+    background: aquamarine;
+    border: 2px solid rgba(4, 136, 92, 0.795);
+    z-index: 10; 
+    transition: .4s;
+}
+
+#panel-superior.desactive{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: aquamarine;
+    border: 2px solid rgba(4, 136, 92, 0.795);
+    z-index: 10; 
+}
+
+#panel-lateral .fila,#panel-superior .fila{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px 40px;
+    font-size: 30px;
+}
+#panel-lateral button,#panel-superior button{
+    color: aliceblue;
+    padding: 10px 20px;
+    background: #000000;
+    border: none;
+}
+#panel-lateral .menu{
+    text-align: start;
+    font-size: 25px;
+    color: #000000;
+    list-style: none;
+    text-decoration: none;
+}
+#panel-lateral .menu li{
+    padding: 10px 40px;
+    margin-bottom: 10px;
+
+}
+
+#panel-lateral .menu li a{
+    text-decoration: none;
+    color: black;
+    transition: .4s;
+}
+
+#panel-lateral .menu li a:hover{
+    color: white;
+}
+
+
+#panel-lateral button:hover,#panel-superior button:hover{
+    color: #000000;
+    padding: 10px 20px;
+    background: blueviolet;
+    border: none;
+    border-radius: 50px;
+}
+#panel-superior .video iframe {
+    width: 90%;
+    height: 90%;
+}
+
+
+
+
+
